@@ -125,6 +125,12 @@ variable "service_name" {
   description = "The service name that will be used in tags and resources default name"
 }
 
+variable "slow_start" {
+  type        = "string"
+  description = "The amount time for targets to warm up before the load balancer sends them a full share of requests. The range is 30-900 seconds or 0 to disable. The default value is 0 seconds."
+  default     = "0"
+}
+
 variable "description" {
   type        = "string"
   description = "Will be used in resources' Description tag"

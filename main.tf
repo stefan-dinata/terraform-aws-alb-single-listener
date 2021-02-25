@@ -59,7 +59,8 @@ resource "aws_lb_target_group" "default" {
   health_check = ["${local.tg_health_check}"]
 
   stickiness = ["${var.tg_stickiness}"]
-
+  slow_start = "${var.slow_start}"
+  
   tags = "${merge(map(
     "Name", local.tg_name,
     "Service", var.service_name,
